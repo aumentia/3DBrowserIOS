@@ -12,6 +12,7 @@
 * Add to your 3D Browser view a radar displaying the POIs around you.
 * Customise the radar image, POI and POI selected images, North icon, etc…
 * Place it wherever you want..
+* **arm64 support**
 
 <br>
 **********************
