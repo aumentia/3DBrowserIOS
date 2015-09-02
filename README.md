@@ -2,7 +2,7 @@
 =======================
 
 <p align="left" >
-  <img src="https://s3-us-west-1.amazonaws.com/aumentia/logoaumentia_small.png" alt="Aumentia" title="Aumentia">
+  <img src="http://www.aumentia.com/images/sdks/sdkbrowser.png" alt="Aumentia" title="Aumentia">
 </p>
 
 * Add Augmented Reality to your app.
