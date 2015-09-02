@@ -34,7 +34,6 @@ To use the framework you will need an API Key. To request it, just send an email
     API
 ******************
 [API 3D Browser](http://api.aumentia.com/browser/)
-[API 3D Browser Radar](http://api.aumentia.com/browser/radar/)
 
 <br>
 ******************
