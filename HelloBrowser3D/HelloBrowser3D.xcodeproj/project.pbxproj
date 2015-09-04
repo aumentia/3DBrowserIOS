@@ -387,10 +387,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				COMPRESS_PNG_FILES = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					HelloBrowser3D/SDKs,
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/ARBrowser3D_sample_1-cufgzowqrcoijaesgmdzeqebzgas/Build/Products/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = HelloBrowser3D/SDKs;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloBrowser3D/HelloBrowser3D-Prefix.pch";
@@ -414,10 +411,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				COMPRESS_PNG_FILES = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					HelloBrowser3D/SDKs,
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/ARBrowser3D_sample_1-cufgzowqrcoijaesgmdzeqebzgas/Build/Products/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = HelloBrowser3D/SDKs;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloBrowser3D/HelloBrowser3D-Prefix.pch";
