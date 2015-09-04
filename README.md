@@ -2,7 +2,7 @@
 =======================
 
 <p align="left" >
-  <img src="https://s3-us-west-1.amazonaws.com/aumentia/logoaumentia_small.png" alt="Aumentia" title="Aumentia">
+  <img src="http://www.aumentia.com/images/sdks/sdkbrowser.png" alt="Aumentia" title="Aumentia">
 </p>
 
 * Add Augmented Reality to your app.
@@ -34,7 +34,6 @@ To use the framework you will need an API Key. To request it, just send an email
     API
 ******************
 [API 3D Browser](http://api.aumentia.com/browser/)
-[API 3D Browser Radar](http://api.aumentia.com/browser/radar/)
 
 <br>
 ******************
