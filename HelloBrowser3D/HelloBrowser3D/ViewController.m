@@ -98,6 +98,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    [super viewWillDisappear:animated];
+    
     // Remove POIs
     [my3dBrowser removeAllPois];
     
