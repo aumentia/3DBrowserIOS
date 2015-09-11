@@ -13,6 +13,8 @@
 * Customise the radar image, POI and POI selected images, North icon, etc…
 * Place it wherever you want..
 * **arm64 support**
+* **BITCODE enabled**
+* Compatible with **XCode 7** and **iOS 9**
 
 <br>
 **********************
