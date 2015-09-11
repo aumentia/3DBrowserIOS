@@ -19,7 +19,7 @@
  * Description:
  * Author: Pablo GM (info@aumentia.com)
  * Created: 23/01/15.
- * Verion 1.0
+ * Verion 1.1
  *
  *
  **************************************************************************/
@@ -41,18 +41,39 @@ __attribute__((__visibility__("default"))) @interface PoiRadarController : UIVie
    
 }
 
+/**
+ * Radar image
+ */
 @property (strong, nonatomic) UIImage           *radarImage;
+/**
+ * POI image
+ */
 @property (strong, nonatomic) UIImage           *poiImage;
+/**
+ * POI selected image
+ */
 @property (strong, nonatomic) UIImage           *poiImageSelected;
+/**
+ * North image
+ */
 @property (strong, nonatomic) UIImage           *northImage;
+/**
+ * Array of all POIs
+ */
 @property (strong, nonatomic) NSMutableArray    *poisArray;
+/**
+ * User location
+ */
 @property (strong, nonatomic) CLLocation        *userLocation;
+/**
+ * Selected POI
+ */
 @property (strong, nonatomic) Poi               *selectedPoi;
 
 /**
  * @brief Init the radar
  *
- * @param key:  license key
+ * @param key  license key
  */
 - (id)initWithKey:(NSString *)key _radar_1_AVAILABLE(_radar_1_V_0_1_1);
 
@@ -69,21 +90,21 @@ __attribute__((__visibility__("default"))) @interface PoiRadarController : UIVie
 /**
  * @brief Rotate radar view
  *
- * @param degrees: the angle to rotate the radar in degrees
+ * @param degrees the angle to rotate the radar in degrees
  */
 - (void)rotateRadarView:(double)degrees _radar_1_AVAILABLE(_radar_1_V_0_1_1);
 
 /**
  * @brief Set CLHeading instance
  *
- * @param newHeading: heading instance
+ * @param newHeading heading instance
  */
 - (void)setHeading:(CLHeading*)newHeading _radar_1_AVAILABLE(_radar_1_V_0_1_1);
 
 /**
  * @brief Set CLLocation instance
  *
- * @param userLocation: location instance
+ * @param userLocation location instance
  */
 - (void)setUserLocation:(CLLocation *)userLocation _radar_1_AVAILABLE(_radar_1_V_0_1_1);
 

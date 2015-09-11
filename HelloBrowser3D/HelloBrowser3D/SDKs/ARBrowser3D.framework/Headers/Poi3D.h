@@ -19,7 +19,7 @@
  * Description:
  * Author: Pablo GM (info@aumentia.com)
  * Created: 23/01/15.
- * Verion 1.0
+ * Verion 1.1
  *
  *
  **************************************************************************/
@@ -27,16 +27,37 @@
 
 #import "Poi.h"
 
-typedef enum
-{
+
+typedef NS_ENUM(NSInteger, poi_camera) {
+    /**
+     * POI faces the camera
+     */
     FACING_CAMERA,
+    /**
+     * POI points to camera
+     */
     POINTING_CAMERA,
+    /**
+     * Default
+     */
     NONE,
+    /**
+     * POI faces the selected POI
+     */
     FACING_SELECTED_POI,
+    /**
+     * POI faces the selected POI only while moving
+     */
     FACING_SELECTED_POI_WHILE_MOVING,
+    /**
+     * POI faces the origin
+     */
     FACING_ORIGIN_POI,
+    /**
+     * POI faces the origin only while moving
+     */
     FACING_ORIGIN_POI_WHILE_MOVING
-}poi_camera;
+};
 
 /**
  @brief 3D Poi needs to be exported from 3D Max or Maya using the plugins for those softwares.
@@ -46,45 +67,50 @@ __attribute__((__visibility__("default"))) @interface Poi3D : Poi
 {
     @public
     
-    /**
-     @brief _pathEAD: list of animations of the POI
-     */
+    
     NSString *_pathEAD;
     
-    /**
-     @brief _playAnimationOnStart: play animation just when adding the POI
-     */
+    
     BOOL _playAnimationOnStart;
     
-    /**
-     @brief _poiCam: POI initial lookAt: facing the camera, pointing the camera or default as the artist design it
-     */
+    
     poi_camera _poiCam;
     
     @private
     
-    /**
-     @brief _localModelMatrix: initial local model matrix
-     */
+    
     NSMutableArray *_localModelMatrix;
     
-    /**
-     @brief _lastAccX: last acceleration on X axis
-     */
+   
     CGFloat _lastAccX;
     
-    /**
-     @brief _lastAccY: last acceleration on Y axis
-     */
+    
     CGFloat _lastAccY;
     
 }
-
+/**
+ @brief pathEAD list of animations of the POI
+ */
 @property (nonatomic, strong) NSString              *pathEAD;
+/**
+ @brief playAnimationOnStart play animation just when adding the POI
+ */
 @property (nonatomic, assign) BOOL                  playAnimationOnStart;
+/**
+ @brief poiCam: POI initial lookAt facing the camera, pointing the camera or default as the artist design it
+ */
 @property poi_camera                                poiCam;
+/**
+ @brief localModelMatrix initial local model matrix
+ */
 @property (nonatomic, strong) NSMutableArray        *localModelMatrix;
+/**
+ @brief lastAccX last acceleration on X axis
+ */
 @property (nonatomic, assign) CGFloat               lastAccX;
+/**
+ @brief lastAccY last acceleration on Y axis
+ */
 @property (nonatomic, assign) CGFloat               lastAccY;
 
 @end

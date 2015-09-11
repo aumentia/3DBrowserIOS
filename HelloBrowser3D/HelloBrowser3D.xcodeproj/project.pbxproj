@@ -37,8 +37,9 @@
 		610680641A79131A00930EB1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 610680631A79131A00930EB1 /* Images.xcassets */; };
 		610680661A79132600930EB1 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 610680651A79132600930EB1 /* Launch Screen.xib */; };
 		610680681A7944FC00930EB1 /* aumentia®.png in Resources */ = {isa = PBXBuildFile; fileRef = 610680671A7944FC00930EB1 /* aumentia®.png */; };
-		616058811AA1F2E5008B3826 /* ARB3D_radar_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616058801AA1F2E5008B3826 /* ARB3D_radar_1.framework */; };
-		616058831AA1F2E9008B3826 /* ARBrowser3D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616058821AA1F2E9008B3826 /* ARBrowser3D.framework */; };
+		612C79851BA2DBD8002ABF67 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 612C79841BA2DBD8002ABF67 /* libstdc++.6.0.9.tbd */; };
+		612C798E1BA2EDAE002ABF67 /* ARB3D_radar_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612C798C1BA2EDAE002ABF67 /* ARB3D_radar_1.framework */; };
+		612C798F1BA2EDAE002ABF67 /* ARBrowser3D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612C798D1BA2EDAE002ABF67 /* ARBrowser3D.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,8 +79,9 @@
 		610680631A79131A00930EB1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		610680651A79132600930EB1 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		610680671A7944FC00930EB1 /* aumentia®.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aumentia®.png"; sourceTree = "<group>"; };
-		616058801AA1F2E5008B3826 /* ARB3D_radar_1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARB3D_radar_1.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/ARBrowser3D_sample_1-cufgzowqrcoijaesgmdzeqebzgas/Build/Products/Debug-iphoneos/ARB3D_radar_1.framework"; sourceTree = "<group>"; };
-		616058821AA1F2E9008B3826 /* ARBrowser3D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARBrowser3D.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/ARBrowser3D_sample_1-cufgzowqrcoijaesgmdzeqebzgas/Build/Products/Debug-iphoneos/ARBrowser3D.framework"; sourceTree = "<group>"; };
+		612C79841BA2DBD8002ABF67 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		612C798C1BA2EDAE002ABF67 /* ARB3D_radar_1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARB3D_radar_1.framework; path = HelloBrowser3D/SDKs/ARB3D_radar_1.framework; sourceTree = "<group>"; };
+		612C798D1BA2EDAE002ABF67 /* ARBrowser3D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARBrowser3D.framework; path = HelloBrowser3D/SDKs/ARBrowser3D.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				616058811AA1F2E5008B3826 /* ARB3D_radar_1.framework in Frameworks */,
-				616058831AA1F2E9008B3826 /* ARBrowser3D.framework in Frameworks */,
+				612C79851BA2DBD8002ABF67 /* libstdc++.6.0.9.tbd in Frameworks */,
 				5D22FCE216EDD63F00B6EE7F /* CoreGraphics.framework in Frameworks */,
 				5D22FCE016EDD63F00B6EE7F /* Foundation.framework in Frameworks */,
 				5D22FCDE16EDD63F00B6EE7F /* UIKit.framework in Frameworks */,
@@ -102,6 +103,8 @@
 				5D22FD1D16EDD83500B6EE7F /* OpenGLES.framework in Frameworks */,
 				5D22FD1B16EDD82C00B6EE7F /* MediaPlayer.framework in Frameworks */,
 				5D22FD1916EDD82500B6EE7F /* MessageUI.framework in Frameworks */,
+				612C798E1BA2EDAE002ABF67 /* ARB3D_radar_1.framework in Frameworks */,
+				612C798F1BA2EDAE002ABF67 /* ARBrowser3D.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,8 +131,9 @@
 		5D22FCDC16EDD63F00B6EE7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				616058821AA1F2E9008B3826 /* ARBrowser3D.framework */,
-				616058801AA1F2E5008B3826 /* ARB3D_radar_1.framework */,
+				612C798C1BA2EDAE002ABF67 /* ARB3D_radar_1.framework */,
+				612C798D1BA2EDAE002ABF67 /* ARBrowser3D.framework */,
+				612C79841BA2DBD8002ABF67 /* libstdc++.6.0.9.tbd */,
 				5DA0520816FA0D8D0068B140 /* resources.bundle */,
 				5D22FD2A16EDD86000B6EE7F /* CoreMedia.framework */,
 				5D22FD2816EDD85B00B6EE7F /* AVFoundation.framework */,
@@ -219,7 +223,7 @@
 		5D22FCD216EDD63F00B6EE7F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Aumentia;
 			};
 			buildConfigurationList = 5D22FCD516EDD63F00B6EE7F /* Build configuration list for PBXProject "HelloBrowser3D" */;
@@ -335,6 +339,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -387,16 +392,21 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				COMPRESS_PNG_FILES = NO;
-				FRAMEWORK_SEARCH_PATHS = HelloBrowser3D/SDKs;
+				FRAMEWORK_SEARCH_PATHS = (
+					HelloBrowser3D/SDKs,
+					"$(PROJECT_DIR)/HelloBrowser3D/SDKs",
+				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloBrowser3D/HelloBrowser3D-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "HelloBrowser3D/HelloBrowser3D-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aumentia.browser3d.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
@@ -411,14 +421,19 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				COMPRESS_PNG_FILES = NO;
-				FRAMEWORK_SEARCH_PATHS = HelloBrowser3D/SDKs;
+				FRAMEWORK_SEARCH_PATHS = (
+					HelloBrowser3D/SDKs,
+					"$(PROJECT_DIR)/HelloBrowser3D/SDKs",
+				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloBrowser3D/HelloBrowser3D-Prefix.pch";
 				INFOPLIST_FILE = "HelloBrowser3D/HelloBrowser3D-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aumentia.browser3d.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;

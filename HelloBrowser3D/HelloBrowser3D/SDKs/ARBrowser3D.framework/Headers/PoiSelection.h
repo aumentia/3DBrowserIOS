@@ -19,7 +19,7 @@
  * Description:
  * Author: Pablo GM (info@aumentia.com)
  * Created: 23/01/15.
- * Verion 1.0
+ * Verion 1.1
  *
  *
  **************************************************************************/
@@ -34,41 +34,52 @@
  * ANIM_OFF: animation POI is not playing at all.
  * ANIM_ON_WHILE_MOVING: animation POI is playing while moving and stop when reach the selected POI.
  */
-typedef enum  {
+typedef NS_ENUM(NSInteger, animationMode) {
+    /**
+     * animation POI is playing all the time.
+     */
     ANIM_ON,
+    /**
+     * animation POI is not playing at all.
+     */
     ANIM_OFF,
+    /**
+     * animation POI is playing while moving and stop when reach the selected POI.
+     */
     ANIM_ON_WHILE_MOVING
-}animationMode;
+};
+
 
 /**
  @brief Represents special type of 3D POI used to represent animation between POIs selected
  */
 @interface PoiSelection : Poi3D {
-    /**
-     @brief _animationSpeed: transition speed
-     */
+    
     NSInteger       _animationSpeed;
-    /**
-     @brief _followPath: if true the animation POI follows line between points, if false, the animation POI just appear over the target POI
-     */
+    
     BOOL            _followPath;
     
-    /**
-     @brief _animMode: animation mode. Modes available {@link PoiSet.animationMode}
-     */
     animationMode   _animMode;
     
-    /**
-     @brief _isAnimationMoving: if animMode is not OFF, the POI will move from initial position to final position following a straight line.
-     * This flags is set to YES will the POI is moving.
-     */
     BOOL            _isAnimationMoving;
     
 }
-
+/**
+ @brief animationSpeed transition speed
+ */
 @property (nonatomic, assign) NSInteger     animationSpeed;
+/**
+ @brief followPath if true the animation POI follows line between points, if false, the animation POI just appear over the target POI
+ */
 @property (nonatomic, assign) BOOL          followPath;
+/**
+ @brief animMode animation mode. Modes available {@link PoiSet.animationMode}
+ */
 @property (nonatomic, assign) animationMode animMode;
+/**
+ @brief isAnimationMoving if animMode is not OFF, the POI will move from initial position to final position following a straight line.
+ * This flags is set to YES will the POI is moving.
+ */
 @property (nonatomic, assign) BOOL          isAnimationMoving;
 
 @end

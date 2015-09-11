@@ -19,7 +19,7 @@
  * Description:
  * Author: Pablo GM (info@aumentia.com)
  * Created: 23/01/15.
- * Verion 1.0
+ * Verion 1.1
  *
  *
  **************************************************************************/
@@ -37,75 +37,85 @@ __attribute__((__visibility__("default"))) @interface Poi : NSObject
 {
     @public
     
-    /**
-     @brief _altitude: Height of the poi. Values between -90 and 90.
-     */
+    
     CGFloat _altitude;
     
-    /**
-     @brief _location: coordinates of the poi
-     */
+    
     CLLocation* _location;
     
-    /**
-     @brief _locationc: cardinal location
-     */
+    
     CGPoint _locationc;
     
-    /**
-     @brief _uId: unique ID of the POI
-     */
+    
     NSInteger _uId;
     
-    /**
-     @brief _poiSize: POI size
-     */
     CGFloat _poiSize;
 
     @private
     
-    /**
-     @brief _modelId: model ID of the POI
-     */
+    
     NSInteger _modelId;
     
-    /**
-     @brief _meshId: mesh ID of the POI
-     */
+    
     NSInteger _meshId;
     
-    /**
-     @brief _cloneId: clone ID of the POI
-     */
+    
     NSInteger _cloneId;
     
-    /**
-     @brief _eadId: EAD ID of the POI
-     */
+    
     NSInteger _eadId;
     
-    /**
-     @brief _controllerId: controller ID of the POI
-     */
+    
     NSInteger _controllerId;
     
-    /**
-     @brief _animationList: list of animations of the POI
-     */
+    
     NSMutableArray *_animationList;
     
 }
 
+/**
+ @brief altitude Height of the poi. Values between -90 and 90.
+ */
 @property (nonatomic, assign) CGFloat               altitude;
+/**
+ @brief location coordinates of the poi
+ */
 @property (nonatomic, strong) CLLocation            *location;
+/**
+ @brief locationc cardinal location
+ */
 @property CGPoint                                   locationc;
+/**
+ @brief uId unique ID of the POI
+ */
 @property NSInteger                                 uId;
+/**
+ @brief modelId model ID of the POI
+ */
 @property NSInteger                                 modelId;
+/**
+ @brief meshId mesh ID of the POI
+ */
 @property NSInteger                                 meshId;
+/**
+ @brief cloneId clone ID of the POI
+ */
 @property NSInteger                                 cloneId;
+/**
+ @brief eadId EAD ID of the POI
+ */
 @property NSInteger                                 eadId;
+/**
+ @brief controllerId controller ID of the POI
+ */
 @property NSInteger                                 controllerId;
+/**
+ @brief animationList list of animations of the POI
+ */
 @property (nonatomic, strong) NSMutableArray        *animationList;
+/**
+ @brief poiSize POI size
+ */
 @property CGFloat                                   poiSize;
 
 /**

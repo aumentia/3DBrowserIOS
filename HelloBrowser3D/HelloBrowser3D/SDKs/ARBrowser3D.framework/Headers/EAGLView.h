@@ -1,41 +1,16 @@
-/*************************************************************************
- *
- * AUMENTIA TECHNOLOGIES
- * __________________
- *
- *  Copyright Aumentia Technologies. All rights reserved 2015.
- *
- * NOTICE:  All information contained herein is, and remains
- * the property of Aumentia Technologies and its suppliers,
- * if any.  The intellectual and technical concepts contained
- * herein are proprietary to Aumentia Technologies
- * and its suppliers and may be covered by Spain and Foreign Patents,
- * patents in process, and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material
- * is strictly forbidden unless prior written permission is obtained
- * from Aumentia Technologies.
- *
- * File: EAGLView.h
- * Description:
- * Author: Pablo GM (info@aumentia.com)
- * Created: 23/01/15.
- * Verion 1.0
- *
- *
- **************************************************************************/
+//
+//  EAGLView.h
+//  EAD Framework
+//
+//  Copyright Aumentia. All rights reserved.
+//
+//
 
 #ifndef EDR_ADVANCED
 #define EDR_ADVANCED
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-
-/**
- * @brief The 3DR Engine Advanced SDK version is a rendering engine that includes the basic functionality to render complex objects and animations.
- * This version is thought for non 3D expert users. It is a powerful API for animation management, objects transformations, video tools,
- *  texture management, camera and lighting control.
- *
- */
 
 /**
  * @brief Structure containing the result after loading EAD:
@@ -67,10 +42,16 @@ typedef struct EAD_RESULT
  * FPS: is fixed and rotates arount itself.
  *
  */
-typedef enum  {
+typedef NS_ENUM(NSInteger, EAD_CAMERAS) {
+    /**
+     * Trackball: rotates around the center.
+     */
     Trackball,
+    /**
+     * FPS: is fixed and rotates arount itself.
+     */
     FPS,
-}EAD_CAMERAS;
+};
 
 /**
  *  Optional protocol
@@ -88,6 +69,12 @@ typedef enum  {
 
 @class UIViewController;
 
+/**
+ * @brief The 3DR Engine Advanced SDK version is a rendering engine that includes the basic functionality to render complex objects and animations.
+ * This version is thought for non 3D expert users. It is a powerful API for animation management, objects transformations, video tools,
+ *  texture management, camera and lighting control.
+ *
+ */
 __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLConnectionDataDelegate>
 {
     UIViewController __unsafe_unretained *pMainViewController;
@@ -112,8 +99,8 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Init EAGLView.
  *
- * @param frame: view frame rectangle.
- * @param camera: camera type.
+ * @param frame view frame rectangle.
+ * @param camera camera type.
  *
  * @return object instance.
  */
@@ -154,7 +141,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Creates a new object.
  *
- *  @param NSNumber custom modelId. If the id is already taken the system will assign another one.
+ *  @param modelId Custom modelId. If the id is already taken the system will assign another one.
  *
  *  @return model modelId within NSNumber, -1 if the model was not created.
  */
@@ -163,8 +150,8 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Get model modelId.
  *
- *  @param NSString holding the model name. This name can be retrieved also using the getHierarchyNames function.
- *  @param NSNumber EAD id containing the object to search.
+ *  @param eadId Holding the model name. This name can be retrieved also using the getHierarchyNames function.
+ *  @param modelName EAD id containing the object to search.
  *
  *  @return model modelId within NSNumber, -1 if the model does not exist.
  */
@@ -173,7 +160,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Remove model from the world.
  *
- *  @param NSNumber model modelId.
+ *  @param modelId Model modelId.
  *
  *  @return YES if the model has been successfully removed, NO otherwise.
  */
@@ -196,7 +183,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Loads EAD 3D object.
  *
- *  @param NSString path: File to load from local resources.
+ *  @param path File to load from local resources.
  *
  *  @return the EAD_RESULT struct with the resulting information.
  */
@@ -206,7 +193,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  *  @brief Loads EAD 3D object.
  *  @discussion not implemented yet.
  *
- *  @param NSString path: File to load from URL.
+ *  @param path File to load from URL.
  *
  *  @return the EAD_RESULT struct with the resulting information.
  */
@@ -216,7 +203,8 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  *  @brief Clone EAD instance.
  *  @discussion If you want to use several times the same EAD, load it once and clone it the next time.
  *
- *  @param NSString path: File to load from URL.
+ *  @param ead_original_id Original EAD id.
+ *  @param ead_cloned_sufix New EAD sufix name.
  *
  *  @return the EAD_RESULT struct with the resulting information.
  */
@@ -225,7 +213,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Removes EAD resource for the EADs pool.
  *
- *  @param eadId:  EAD unique ID.
+ *  @param eadId  EAD unique ID.
  *
  *  @return YES if the EAD has been successfully removed.
  */
@@ -234,9 +222,9 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Gives a list with the names of all objects starting from the object with given eadId.
  *
- *  @param NSNumber eadId:  EAD unique id.
+ *  @param eadId  EAD unique id.
  *
- *  @return NSMutableArray:  The list of names as NSString objects.
+ *  @return The list of names as NSString objects.
  */
 - (NSMutableArray*)getHierarchyNames:(NSNumber*)eadId ;
 
@@ -244,18 +232,18 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  * @brief Gives a list with the names of all controllers starting from the object with given eadId.
  * Controllers are used to manipulate the model.
  *
- *  @param NSNumber eadId:  EAD unique id.
+ *  @param eadId  EAD unique id.
  *
- *  @return NSMutableArray:  The list of names as NSString objects.
+ *  @return  The list of names as NSString objects.
  */
 - (NSMutableArray*)getControlsNames:(NSNumber*)eadId ;
 
 /**
  * @brief Gives a list with the names of all the meshes from the object with given eadId.
  *
- *  @param NSNumber eadId:  EAD unique id.
+ *  @param eadId  EAD unique id.
  *
- *  @return NSMutableArray:  The list of meshes as NSString objects.
+ *  @return  The list of meshes as NSString objects.
  */
 - (NSMutableArray*)getMeshesNames:(NSNumber*)eadId ;
 
@@ -263,9 +251,9 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  *  @brief add target/action for click event to modelId object.
  *  You can call this multiple times and you can specify multiple target/actions for a particular click event.
  *
- * @param target: target where you implemented the selector.
- * @param action: action to perform once the event is triggered.
- * @param modelId: object modelId.
+ * @param target target where you implemented the selector.
+ * @param action action to perform once the event is triggered.
+ * @param modelId object modelId.
  *
  * @return YES the target has been successfully added.
  */
@@ -274,8 +262,8 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief remove the target/action for a set of click events.
  *
- * @param target: target where you implemented the selector.
- * @param modelId: object modelId. Pass NULL to remove all the click events associated to the target.
+ * @param target target where you implemented the selector.
+ * @param modelId object modelId. Pass NULL to remove all the click events associated to the target.
  *
  * @return YES the target has been successfully removed.
  */
@@ -284,8 +272,8 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Attach an EAD object.
  *
- *  @param eadId: EAD id.
- *  @param modelId: model unique id.
+ *  @param eadId EAD id.
+ *  @param modelId model unique id.
  *
  *  @return YES if the EAD has been successfully attached.
  */
@@ -294,8 +282,8 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Detach an EAD object.
  *
- *  @param eadId: EAD id.
- *  @param modelId: model unique id.
+ *  @param eadId EAD id.
+ *  @param modelId model unique id.
  *
  *  @return YES if the EAD has been successfully detached.
  */
@@ -315,7 +303,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Returns a list of textures from the object with given eadId.
  *
- *  @param modelId: model unique id.
+ *  @param modelId model unique id.
  *
  *  @return NSMutableArray with the list of textures.
  */
@@ -324,10 +312,10 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Replaces an existing texture with a new texture.
  *
- *  @param modelId              : model unique id.
- *  @param NSString oldTexture  : The name of the existing texture.
- *  @param NSString newTexture  : Full path to the new texture.
- *  @param update               : wheter to remove old texture or keep it in memory
+ *  @param modelId      model unique id.
+ *  @param oldTxt       The name of the existing texture.
+ *  @param newTxt       Full path to the new texture.
+ *  @param update       Wheter to remove old texture or keep it in memory
  *
  *  @return YES if the texture has been successfully replaced.
  */
@@ -336,13 +324,13 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Replaces an existing texture with a new texture.
  *
- *  @param modelId: model unique id.
- *  @param NSString oldTexture  : The name of the existing texture.
- *  @param NSString newTexture  : Full path to the new texture.
- *  @param NSData newData       : image data
- *  @param int w                : image width
- *  @param int h                : image height
- *  @param BOOL update          : wheter to remove old texture or keep it in memory
+ *  @param modelId  model unique id.
+ *  @param oldTxt   The name of the existing texture.
+ *  @param newTxt   Full path to the new texture.
+ *  @param buffer   image data
+ *  @param w        image width
+ *  @param h        image height
+ *  @param update   wheter to remove old texture or keep it in memory
  *
  *  @return YES if the texture has been successfully replaced.
  */
@@ -351,13 +339,13 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Replaces an existing texture with a new texture.
  *
- *  @param modelId: model unique id.
- *  @param NSString oldTexture  : The name of the existing texture.
- *  @param NSString newTexture  : Full path to the new texture.
- *  @param NSData newData       : image data
- *  @param const char* fileType : image width
- *  @param size_t fileLen       : image height
- *  @param BOOL update          : wheter to remove old texture or keep it in memory
+ *  @param modelId  model unique id.
+ *  @param oldTxt   The name of the existing texture.
+ *  @param newTxt   Full path to the new texture.
+ *  @param buffer   image data
+ *  @param fileType image width
+ *  @param fileLen  image height
+ *  @param update   wheter to remove old texture or keep it in memory
  *
  *  @return YES if the texture has been successfully replaced.
  */
@@ -366,9 +354,9 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  *  @brief Set Model Visibility.
  *
- *  @param modelId: model unique id.
- *  @param BOOL visible: YES to show the model, NO to hide it.
- *  @param BOOL applyToChildren: YES to affect the children.
+ *  @param modelId model unique id.
+ *  @param visible YES to show the model, NO to hide it.
+ *  @param applyToChildren YES to affect the children.
  *
  *  @return YES if successfully hidden.
  */
@@ -399,7 +387,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  * @brief Set Model position.
  *
  *  @param objPosition  (x,y,z) vector.
- *  @param modelId: model unique id.
+ *  @param modelId model unique id.
  *
  *  @return YES if the model position has been successfully set.
  */
@@ -409,7 +397,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  * @brief Set Model scale.
  *
  *  @param objScale (x,y,z) vector.
- *  @param modelId: model unique id.
+ *  @param modelId model unique id.
  *
  *  @return YES if the model scale has been successfully set.
  */
@@ -419,7 +407,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  *  @brief Set Model rotation.
  *
  *  @param objRot in degrees  (x,y,z) vector.
- *  @param modelId: model unique id.
+ *  @param modelId model unique id.
  *
  *  @return YES if the model rotation has been successfully set.
  */
@@ -429,7 +417,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  *  @brief Set Model matrix.
  *
  *  @param objRotation 4x4 model matrix.
- *  @param modelId: model unique id.
+ *  @param modelId model unique id.
  *
  *  @return YES if the model matrix has been successfully set.
  */
@@ -438,7 +426,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  *  @brief Get Model position.
  *
- *  @param modelId: model unique id.
+ *  @param modelId model unique id.
  *
  *  @return (x,y,z) vector.
  */
@@ -447,35 +435,36 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Sets the rotation offsets of the scene.
  *
- * @param vRot: the rotation angles.
- * @param modelId: model unique id.
+ * @param vRot the rotation angles.
+ * @param modelId model unique id.
  */
 - (BOOL) SetRotationsOffset:(NSArray*)vRot withModelId:(NSNumber*)modelId ;
 
 /**
  * @brief Get screen position coordinates (x,y) of modelId
  *
- * @param modelId
+ * @param modelId model unique id
  *
- * @return modelId: model unique id.
+ * @return modelId model unique id.
  */
 - (CGPoint) getScreenCoords:(NSNumber*)modelId;
 
 /**
  * @brief Get model 4x4 matrix
  *
- * @param modelId
+ * @param modelId model unique id
  *
- * @return modelId: model unique id.
+ * @return modelId model unique id.
  */
 - (NSMutableArray*) getModelMatrix:(NSNumber*)modelId;
 
 /**
  * @brief Apply rotation to model matrix
  *
- * @param modelId       : model id
- * @param rotVector     : rotation vector
- * @param localMatrix   : model id model matrix
+ * @param modelId       model id
+ * @param rotVector     rotation vector
+ * @param scaleVector   scale vector
+ * @param localMatrix   model id model matrix
  *
  * @return YES if rotation properly applied.
  */
@@ -484,7 +473,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Set rotation to the engine root
  *
- * @param rotation     
+ * @param rotation  Model rotation
  *
  * @return YES if rotation properly applied.
  */
@@ -493,7 +482,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Set position to the engine root
  *
- * @param position
+ * @param position Model position
  *
  * @return YES if position properly applied.
  */
@@ -502,7 +491,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Set scale to the engine root
  *
- * @param scale
+ * @param scale Model scale
  *
  * @return YES if scale properly applied.
  */
@@ -511,8 +500,8 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Set rotation to the root model matrix
  *
- * @param rotVector     : rotation vector
- * @param localMatrix
+ * @param rotVector     rotation vector
+ * @param localMatrix   local matrix
  *
  * @return YES if rotation properly applied.
  */
@@ -532,8 +521,8 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Stop model animation.
  *
- * @param applyToChildren: YES to apply to object children, NO otherwise.
- * @param modelId: model unique id.
+ * @param applyToChildren YES to apply to object children, NO otherwise.
+ * @param modelId model unique id.
  *
  *  @return YES if the animation has been successfully stopped.
  */
@@ -542,8 +531,8 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Pause model animation.
  *
- * @param applyToChildren: YES to apply to object children, NO otherwise.
- * @param modelId: model unique id.
+ * @param applyToChildren YES to apply to object children, NO otherwise.
+ * @param modelId model unique id.
  *
  *  @return YES if the animation has been successfully paused.
  */
@@ -552,8 +541,8 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Resume model animation.
  *
- * @param applyToChildren: YES to apply to object children, NO otherwise.
- * @param modelId: model unique id.
+ * @param applyToChildren YES to apply to object children, NO otherwise.
+ * @param modelId model unique id.
  *
  *  @return YES if the animation has been successfully resumed.
  */
@@ -562,8 +551,8 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Set animation to an object.
  *
- * @param animName: animation name. Can be retrieved using getAnimationsList function.
- * @param modelId: model unique id.
+ * @param animName animation name. Can be retrieved using getAnimationsList function.
+ * @param modelId model unique id.
  *
  * @return YES if the animation has been properly set, NO otherwise.
  */
@@ -572,8 +561,8 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Play model animation.
  *
- * @param applyToChildren: YES to apply to object children, NO otherwise.
- * @param modelId: model unique id.
+ * @param applyToChildren YES to apply to object children, NO otherwise.
+ * @param modelId model unique id.
  *
  *  @return YES if the animation has been successfully started.
  */
@@ -582,12 +571,12 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Set animation speed.
  *
- *  @param applyToChildren: YES to apply to object children, NO otherwise.
- *  @param speed: 1.0f for normal speed.
+ *  @param applyToChildren YES to apply to object children, NO otherwise.
+ *  @param speed 1.0f for normal speed.
  *				   fSpeed > 1.0f makes the animation run faster.
  *				   fSpeed < 1.0f makes the animation run slower.
  *				   fSpeed < 0.0f makes the animation run backwards.
- *  @param modelId: model unique id.
+ *  @param modelId model unique id.
  *
  *  @return YES if the animation speed has been successfully set.
  */
@@ -595,7 +584,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 
 /** @brief Get the float representing the speed.
  *
- *  @param modelId: model unique id.
+ *  @param modelId model unique id.
  *
  *  @return float representation of the speed.
  */
@@ -606,7 +595,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  *
  * @param loop YES the animation will enter in loop mode, NO the animation will not loop once completed.
  * By default all animations starts with loop mode on.
- *  @param modelId: model unique id.
+ *  @param modelId model unique id.
  *
  *  @return YES if the animation loop has been successfully.
  */
@@ -615,7 +604,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Returns a list of animations the object has.
  *
- *  @param modelId: model unique id.
+ *  @param modelId model unique id.
  *
  *  @return NSMutableArray: A list of NSString objects with the animations names.
  */
@@ -630,8 +619,8 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  *	with the current diffuse textures. Detaching the video will remove all the diffuse textures from the model.
  *  @discussion not implemented yet.
  *
- *  @param eadId: EAD unique id.
- *  @param modelId: model unique id.
+ *  @param eadId EAD unique id.
+ *  @param modelId model unique id.
  *
  *  @return YES if the video has been successfully attached.
  */
@@ -641,7 +630,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  * @brief Detach the Video object. Detaching the video will remove all the diffuse textures from the model.
  *  @discussion not implemented yet.
  *
- *  @param modelId: model unique id.
+ *  @param modelId model unique id.
  *
  *  @return YES if the video has been successfully detached.
  */
@@ -651,7 +640,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  * @brief Play video.
  *  @discussion not implemented yet.
  *
- *  @param modelId: model unique id.
+ *  @param modelId model unique id.
  *
  *  @return YES if the video has been successfully started or resumed.
  */
@@ -661,7 +650,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  * @brief Pause video.
  *  @discussion not implemented yet.
  *
- *  @param modelId: model unique id.
+ *  @param modelId model unique id.
  *
  *  @return YES if the video has been successfully paused.
  */
@@ -671,7 +660,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  * @brief Stop video.
  *  @discussion not implemented yet.
  *
- *  @param modelId: model unique id.
+ *  @param modelIdM model unique id.
  *
  *  @return YES if the video has been successfully stopped.
  */
@@ -681,7 +670,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  * @brief Loads video file.
  *  @discussion not implemented yet.
  *
- *  @param NSString path: File to load from local resources.
+ *  @param path File to load from local resources.
  *
  *  @return the videoId if successfully loaded, else returns -1.
  */
@@ -691,7 +680,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  * @brief Loads video file.
  *  @discussion not implemented yet
  *
- *  @param NSString path: File to load from URL
+ *  @param path File to load from URL
  *
  *  @return the videoId if successfully loaded, else returns -1
  */
@@ -700,7 +689,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Removes Video resource from the videos pool.
  *
- *  @param NSNumber videoId:  video unique ID.
+ *  @param videoId  video unique ID.
  *
  *  @return YES if the video has been successfully removed, NO otherwise.
  */
@@ -713,7 +702,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Set world camera position.
  *
- *  @param camPos:  (x,y,z) vector.
+ *  @param camPos  (x,y,z) vector.
  *
  *  @return YES if the camera position is properly set.
  *
@@ -723,7 +712,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Set camera target position.
  *
- *  @param camTarPos:  (x,y,z) vector.
+ *  @param camTarPos  (x,y,z) vector.
  *
  *  @return YES if the camera target position is properly set.
  *
@@ -733,7 +722,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Set camera rotation.
  *
- *  @param rotMatrix:  4x4 matrix.
+ *  @param rotMatrix  4x4 matrix.
  *
  *  @return YES if the camera rotation is properly set.
  *
@@ -743,7 +732,7 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Set camera type. This function can be used at run time.
  *
- * @param EAD_CAMERAS:  camera time
+ * @param camera  camera time
  *
  */
 - (void)setCameraActive:(EAD_CAMERAS)camera;
@@ -751,8 +740,8 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Set lookAt camera position
  *
- * @param NSArray lookAtCoord:  camera time
- * @param NSNumber modelId:  camera time
+ * @param  lookAtCoord  camera time
+ * @param  modelId  camera time
  *
  * @return YES if the camera lookAt position is properly set.
  */
@@ -766,9 +755,9 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  *  Sets whether the object will be affected by lights.
  *
- * @param applyToObject: YES object affected by light.
- * @param applyToChildren: YES to apply to object children, NO otherwise.
- * @param modelId: model unique id.
+ * @param applyToObject YES object affected by light.
+ * @param applyToChildren YES to apply to object children, NO otherwise.
+ * @param modelId model unique id.
  *
  * @return YES if the lights value has been successfully applied.
  */
@@ -782,9 +771,9 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Check if a specific object is clicked.
  *
- * @param modelId: object modelId.
- * @param xC: X coord of the click on the screen.
- * @param yC: Y coord of the click on the screen.
+ * @param modelId object modelId.
+ * @param xC X coord of the click on the screen.
+ * @param yC Y coord of the click on the screen.
  *
  * @return YES if object is clicked, NO is object is not clicked.
  */
@@ -793,8 +782,8 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
 /**
  * @brief Get clicked object list.
  *
- * @param xC: X coord of the click on the screen.
- * @param yC: Y coord of the click on the screen.
+ * @param xC X coord of the click on the screen.
+ * @param yC Y coord of the click on the screen.
  *
  * @return Object clicked list.
  */
@@ -804,8 +793,8 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  * @brief Get clicked object list.
  * @discussion Using RAY method. Best option for squared shapes. 
  *
- * @param xC: X coord of the click on the screen.
- * @param yC: Y coord of the click on the screen.
+ * @param xC X coord of the click on the screen.
+ * @param yC Y coord of the click on the screen.
  *
  * @return Object clicked list.
  */
@@ -815,7 +804,8 @@ __attribute__((__visibility__("default"))) @interface EAGLView : UIView<NSURLCon
  * @brief Set an object as clickable.
  * @discussion Only objects set as clickable will be able to appear in the getClickedObjectID and GetClickedObjectIDByRay return list.
  *
- * @param activate: YES set as clickable, NO remove it from clickable list.
+ * @param activate YES set as clickable, NO remove it from clickable list.
+ * @param uniqueId Unique id.
  *
  * @return YES if the object has been properly set as clickable
  */

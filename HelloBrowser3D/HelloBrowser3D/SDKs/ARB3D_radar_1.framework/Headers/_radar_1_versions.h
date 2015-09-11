@@ -19,7 +19,7 @@
  * Description:
  * Author: Pablo GM (info@aumentia.com)
  * Created: 23/01/15.
- * Verion 1.0
+ * Verion 1.1
  *
  *
  **************************************************************************/

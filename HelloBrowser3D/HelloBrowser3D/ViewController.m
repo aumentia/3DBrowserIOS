@@ -64,7 +64,7 @@
     [self initCapture];
     
     // Initiliaze
-    my3dBrowser = [[_DBrowser alloc] initBrowser:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) withKey:@"627a859b970b7d2cbb337e99ada9610f13ae1b64" setDebug:YES representation:geographical];
+    my3dBrowser = [[_DBrowser alloc] initBrowser:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) withKey:@"627a859b970b7d2cbb337e99ada9610f13ae1b64" setDebug:NO representation:geographical];
     
     // Delegate
     [my3dBrowser setDelegate:self];
