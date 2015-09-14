@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A400F2F22D23A463518B585E0BD3B3891A95188C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A400F2F22D23A463518B585E0BD3B3891A95188C" : 0,
+    "5260F61160223A2BE6BF67F3E5B5FA2D44385EE3" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7A376A84-B1E7-45EA-A1CE-443CEE5D3015",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A400F2F22D23A463518B585E0BD3B3891A95188C" : "Hello3DBrowser_iOS",
+    "5260F61160223A2BE6BF67F3E5B5FA2D44385EE3" : "3D%20Browser"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "HelloBrowser3D",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "HelloBrowser3D\/HelloBrowser3D.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/indoortech\/HelloBrowser3D_iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5260F61160223A2BE6BF67F3E5B5FA2D44385EE3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/aumentia\/Hello3DBrowser_iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A400F2F22D23A463518B585E0BD3B3891A95188C"
+    }
+  ]
+}

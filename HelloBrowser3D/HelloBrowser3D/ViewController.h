@@ -10,8 +10,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import <ARBrowser3D/3DBrowser.h>
-#import <ARB3D_radar_1/PoiRadarController.h>
+#import <ARBrowser3D/ARBrowser3D.h>
+#import <ARBrowser3DRadar/ARBrowser3DRadar.h>
 
 @interface ViewController : UIViewController<CLLocationManagerDelegate, EDBrowserProtocol, UIGestureRecognizerDelegate, UIAccelerometerDelegate>
 {

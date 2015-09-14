@@ -52,7 +52,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:YES];
+    [super viewWillAppear:animated];
 	// Do any additional setup after loading the view, typically from a nib.
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
@@ -118,9 +118,6 @@
     // Remove radar
     [self removeRadar];
     
-    // Remove notifications
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
     // Release memory
     [my3dBrowser releaseBrowser];
     [my3dBrowser removeFromSuperview];
@@ -130,10 +127,6 @@
     {
         [view removeFromSuperview];
     }
-    
-    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
-
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
@@ -141,7 +134,6 @@
 
 - (BOOL)addPOIs:(CLLocation*)location
 {
-    // SAMPLE COORDS
     float _lat = location.coordinate.latitude;
     float _lon = location.coordinate.longitude;
     
@@ -342,7 +334,7 @@
 {
     if (motionManager == nil)
     {
-        // Set up MotionManager
+        // Setup MotionManager
         motionManager = [[CMMotionManager alloc] init]; // motionManager is an instance variable
         
         motionManager.showsDeviceMovementDisplay    = YES; //calibration popup
@@ -378,9 +370,9 @@
 		locationManager.desiredAccuracy = kCLLocationAccuracyBest;
 		locationManager.delegate = self;
         
-        if ( [locationManager respondsToSelector:@selector(requestAlwaysAuthorization)] )
+        if ( [locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)] )
         {
-            [locationManager requestAlwaysAuthorization];
+            [locationManager requestWhenInUseAuthorization];
         }
         
 		[locationManager startUpdatingLocation];
@@ -393,6 +385,7 @@
     if (locationManager != nil)
     {
         [locationManager stopUpdatingHeading];
+        [locationManager stopUpdatingLocation];
         locationManager = nil;
         lastLocation = nil;
     }
@@ -530,7 +523,7 @@
         
         UIImage* radarImage;
         
-        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+        if(isIphone)
         {
             radarImage = [UIImage imageNamed:@"resources.bundle/iPhoneRadar.png"];
         }else{

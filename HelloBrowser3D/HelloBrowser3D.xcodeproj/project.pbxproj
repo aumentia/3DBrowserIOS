@@ -38,9 +38,19 @@
 		610680661A79132600930EB1 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 610680651A79132600930EB1 /* Launch Screen.xib */; };
 		610680681A7944FC00930EB1 /* aumentia®.png in Resources */ = {isa = PBXBuildFile; fileRef = 610680671A7944FC00930EB1 /* aumentia®.png */; };
 		612C79851BA2DBD8002ABF67 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 612C79841BA2DBD8002ABF67 /* libstdc++.6.0.9.tbd */; };
-		612C798E1BA2EDAE002ABF67 /* ARB3D_radar_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612C798C1BA2EDAE002ABF67 /* ARB3D_radar_1.framework */; };
 		612C798F1BA2EDAE002ABF67 /* ARBrowser3D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612C798D1BA2EDAE002ABF67 /* ARBrowser3D.framework */; };
+		61971CD01BA35D03008C5807 /* ARBrowser3DRadar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61971CCF1BA35D03008C5807 /* ARBrowser3DRadar.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		61971CA21BA35A29008C5807 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61971C9E1BA35A28008C5807 /* HelloBrowser3DSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 61971C891BA35A28008C5807;
+			remoteInfo = HelloBrowser3DSwift;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5D22FCDA16EDD63F00B6EE7F /* HelloBrowser3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloBrowser3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,8 +90,9 @@
 		610680651A79132600930EB1 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		610680671A7944FC00930EB1 /* aumentia®.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aumentia®.png"; sourceTree = "<group>"; };
 		612C79841BA2DBD8002ABF67 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
-		612C798C1BA2EDAE002ABF67 /* ARB3D_radar_1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARB3D_radar_1.framework; path = HelloBrowser3D/SDKs/ARB3D_radar_1.framework; sourceTree = "<group>"; };
 		612C798D1BA2EDAE002ABF67 /* ARBrowser3D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARBrowser3D.framework; path = HelloBrowser3D/SDKs/ARBrowser3D.framework; sourceTree = "<group>"; };
+		61971C9E1BA35A28008C5807 /* HelloBrowser3DSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HelloBrowser3DSwift.xcodeproj; path = HelloBrowser3DSwift/HelloBrowser3DSwift.xcodeproj; sourceTree = "<group>"; };
+		61971CCF1BA35D03008C5807 /* ARBrowser3DRadar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARBrowser3DRadar.framework; path = HelloBrowser3D/SDKs/ARBrowser3DRadar.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +114,7 @@
 				5D22FD1D16EDD83500B6EE7F /* OpenGLES.framework in Frameworks */,
 				5D22FD1B16EDD82C00B6EE7F /* MediaPlayer.framework in Frameworks */,
 				5D22FD1916EDD82500B6EE7F /* MessageUI.framework in Frameworks */,
-				612C798E1BA2EDAE002ABF67 /* ARB3D_radar_1.framework in Frameworks */,
+				61971CD01BA35D03008C5807 /* ARBrowser3DRadar.framework in Frameworks */,
 				612C798F1BA2EDAE002ABF67 /* ARBrowser3D.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +125,7 @@
 		5D22FCD116EDD63F00B6EE7F = {
 			isa = PBXGroup;
 			children = (
+				61971C9E1BA35A28008C5807 /* HelloBrowser3DSwift.xcodeproj */,
 				5D22FCE316EDD63F00B6EE7F /* HelloBrowser3D */,
 				5D22FCDC16EDD63F00B6EE7F /* Frameworks */,
 				5D22FCDB16EDD63F00B6EE7F /* Products */,
@@ -131,7 +143,7 @@
 		5D22FCDC16EDD63F00B6EE7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				612C798C1BA2EDAE002ABF67 /* ARB3D_radar_1.framework */,
+				61971CCF1BA35D03008C5807 /* ARBrowser3DRadar.framework */,
 				612C798D1BA2EDAE002ABF67 /* ARBrowser3D.framework */,
 				612C79841BA2DBD8002ABF67 /* libstdc++.6.0.9.tbd */,
 				5DA0520816FA0D8D0068B140 /* resources.bundle */,
@@ -196,6 +208,14 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		61971C9F1BA35A28008C5807 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				61971CA31BA35A29008C5807 /* HelloBrowser3DSwift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -236,12 +256,28 @@
 			mainGroup = 5D22FCD116EDD63F00B6EE7F;
 			productRefGroup = 5D22FCDB16EDD63F00B6EE7F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 61971C9F1BA35A28008C5807 /* Products */;
+					ProjectRef = 61971C9E1BA35A28008C5807 /* HelloBrowser3DSwift.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5D22FCD916EDD63F00B6EE7F /* HelloBrowser3D */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		61971CA31BA35A29008C5807 /* HelloBrowser3DSwift.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = HelloBrowser3DSwift.app;
+			remoteRef = 61971CA21BA35A29008C5807 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5D22FCD816EDD63F00B6EE7F /* Resources */ = {
