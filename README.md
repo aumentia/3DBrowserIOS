@@ -47,7 +47,7 @@ To use the framework you will need an API Key. To request it, just send an email
 *************************
      VS Framework version
 *************************
-1.0
+1.1
 
 <br>
 ******************
