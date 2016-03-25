@@ -181,7 +181,7 @@ extension ViewController
         
         let uIdPOI = _my3dBrowser.add(poi)
         
-        Counter._counter++
+        Counter._counter += 1
         
         if Counter._counter == 2
         {
@@ -225,7 +225,7 @@ extension ViewController
         
         let uIdPOI = _my3dBrowser.add(poi)
         
-        Counter2D._counter2D++
+        Counter2D._counter2D += 1
         
         if Counter2D._counter2D == 2
         {
@@ -441,7 +441,7 @@ extension ViewController:UIGestureRecognizerDelegate
         // PAN
         if _panRecognizer == nil
         {
-            _panRecognizer = UIPanGestureRecognizer(target: self, action: Selector("move:"))
+            _panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ViewController.move(_:)))
             _panRecognizer.minimumNumberOfTouches = 1
             _panRecognizer.maximumNumberOfTouches = 1
             _panRecognizer.delegate               = self
@@ -452,7 +452,7 @@ extension ViewController:UIGestureRecognizerDelegate
         // PINCH
         if _pinchRecognizer == nil
         {
-            _pinchRecognizer = UIPinchGestureRecognizer(target: self, action: Selector("zoomPinch:"))
+            _pinchRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(ViewController.zoomPinch(_:)))
             
             self.view.addGestureRecognizer(_pinchRecognizer)
         }
@@ -460,23 +460,23 @@ extension ViewController:UIGestureRecognizerDelegate
         // ROTATION
         if _rotationRecognizer == nil
         {
-            _rotationRecognizer = UIRotationGestureRecognizer(target: self, action: Selector("spin:"))
+            _rotationRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(ViewController.spin(_:)))
             
             self.view.addGestureRecognizer(_rotationRecognizer)
         }
     }
     
-    func spin(recognizer:UIRotationGestureRecognizer)
+    @objc func spin(recognizer:UIRotationGestureRecognizer)
     {
         
     }
     
-    func zoomPinch(recognizer:UIPinchGestureRecognizer)
+    @objc func zoomPinch(recognizer:UIPinchGestureRecognizer)
     {
         
     }
     
-    func move(recognizer:UIPanGestureRecognizer)
+    @objc func move(recognizer:UIPanGestureRecognizer)
     {
         _my3dBrowser.spin3DPOI(recognizer)
     }
@@ -511,7 +511,7 @@ extension ViewController: CLLocationManagerDelegate
             _locationManager.desiredAccuracy    = kCLLocationAccuracyBest
             _locationManager.delegate           = self
             
-            if _locationManager.respondsToSelector(Selector("requestWhenInUseAuthorization"))
+            if _locationManager.respondsToSelector(#selector(CLLocationManager.requestWhenInUseAuthorization))
             {
                 _locationManager.requestWhenInUseAuthorization()
             }

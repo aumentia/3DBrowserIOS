@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		617CE45C1CA55BDA00B34602 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 617CE45B1CA55BDA00B34602 /* libstdc++.6.0.9.tbd */; };
 		61971C8D1BA35A28008C5807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61971C8C1BA35A28008C5807 /* AppDelegate.swift */; };
 		61971C8F1BA35A28008C5807 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61971C8E1BA35A28008C5807 /* ViewController.swift */; };
 		61971C921BA35A28008C5807 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61971C901BA35A28008C5807 /* Main.storyboard */; };
@@ -14,21 +15,7 @@
 		61971C971BA35A28008C5807 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61971C951BA35A28008C5807 /* LaunchScreen.storyboard */; };
 		61971CE21BA35D7B008C5807 /* ARBrowser3DRadar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61971CD11BA35D7B008C5807 /* ARBrowser3DRadar.framework */; };
 		61971CE31BA35D7B008C5807 /* ARBrowser3D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61971CD21BA35D7B008C5807 /* ARBrowser3D.framework */; };
-		61971CE41BA35D7B008C5807 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 61971CD31BA35D7B008C5807 /* libstdc++.6.0.9.tbd */; };
 		61971CE51BA35D7B008C5807 /* resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 61971CD41BA35D7B008C5807 /* resources.bundle */; };
-		61971CE61BA35D7B008C5807 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61971CD51BA35D7B008C5807 /* CoreMedia.framework */; };
-		61971CE71BA35D7B008C5807 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61971CD61BA35D7B008C5807 /* AVFoundation.framework */; };
-		61971CE81BA35D7B008C5807 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61971CD71BA35D7B008C5807 /* CoreVideo.framework */; };
-		61971CE91BA35D7B008C5807 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61971CD81BA35D7B008C5807 /* CoreFoundation.framework */; };
-		61971CEA1BA35D7B008C5807 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61971CD91BA35D7B008C5807 /* CoreMotion.framework */; };
-		61971CEB1BA35D7B008C5807 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61971CDA1BA35D7B008C5807 /* CoreLocation.framework */; };
-		61971CEC1BA35D7B008C5807 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61971CDB1BA35D7B008C5807 /* QuartzCore.framework */; };
-		61971CED1BA35D7B008C5807 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61971CDC1BA35D7B008C5807 /* OpenGLES.framework */; };
-		61971CEE1BA35D7B008C5807 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61971CDD1BA35D7B008C5807 /* MediaPlayer.framework */; };
-		61971CEF1BA35D7B008C5807 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61971CDE1BA35D7B008C5807 /* MessageUI.framework */; };
-		61971CF01BA35D7B008C5807 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61971CDF1BA35D7B008C5807 /* UIKit.framework */; };
-		61971CF11BA35D7B008C5807 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61971CE01BA35D7B008C5807 /* Foundation.framework */; };
-		61971CF21BA35D7B008C5807 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61971CE11BA35D7B008C5807 /* CoreGraphics.framework */; };
 		61971CF51BA35D87008C5807 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 61971CF41BA35D87008C5807 /* CaptureSessionManager.m */; };
 		61971CF71BA35D9D008C5807 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 61971CF61BA35D9D008C5807 /* data */; };
 		61F32AAA1BA6B933004C2381 /* aumentia®.png in Resources */ = {isa = PBXBuildFile; fileRef = 61F32AA31BA6B933004C2381 /* aumentia®.png */; };
@@ -40,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		617CE45B1CA55BDA00B34602 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		61971C891BA35A28008C5807 /* HelloBrowser3DSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloBrowser3DSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61971C8C1BA35A28008C5807 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61971C8E1BA35A28008C5807 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,21 +37,7 @@
 		61971C981BA35A28008C5807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61971CD11BA35D7B008C5807 /* ARBrowser3DRadar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARBrowser3DRadar.framework; path = ../../HelloBrowser3D/SDKs/ARBrowser3DRadar.framework; sourceTree = "<group>"; };
 		61971CD21BA35D7B008C5807 /* ARBrowser3D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARBrowser3D.framework; path = ../../HelloBrowser3D/SDKs/ARBrowser3D.framework; sourceTree = "<group>"; };
-		61971CD31BA35D7B008C5807 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/usr/lib/libstdc++.6.0.9.tbd"; sourceTree = "<absolute>"; };
 		61971CD41BA35D7B008C5807 /* resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = resources.bundle; path = ../../HelloBrowser3D/SDKs/resources.bundle; sourceTree = "<group>"; };
-		61971CD51BA35D7B008C5807 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/CoreMedia.framework"; sourceTree = "<absolute>"; };
-		61971CD61BA35D7B008C5807 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/AVFoundation.framework"; sourceTree = "<absolute>"; };
-		61971CD71BA35D7B008C5807 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/CoreVideo.framework"; sourceTree = "<absolute>"; };
-		61971CD81BA35D7B008C5807 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/CoreFoundation.framework"; sourceTree = "<absolute>"; };
-		61971CD91BA35D7B008C5807 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/CoreMotion.framework"; sourceTree = "<absolute>"; };
-		61971CDA1BA35D7B008C5807 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/CoreLocation.framework"; sourceTree = "<absolute>"; };
-		61971CDB1BA35D7B008C5807 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/QuartzCore.framework"; sourceTree = "<absolute>"; };
-		61971CDC1BA35D7B008C5807 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/OpenGLES.framework"; sourceTree = "<absolute>"; };
-		61971CDD1BA35D7B008C5807 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/MediaPlayer.framework"; sourceTree = "<absolute>"; };
-		61971CDE1BA35D7B008C5807 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/MessageUI.framework"; sourceTree = "<absolute>"; };
-		61971CDF1BA35D7B008C5807 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/UIKit.framework"; sourceTree = "<absolute>"; };
-		61971CE01BA35D7B008C5807 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/Foundation.framework"; sourceTree = "<absolute>"; };
-		61971CE11BA35D7B008C5807 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/CoreGraphics.framework"; sourceTree = "<absolute>"; };
 		61971CF31BA35D87008C5807 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaptureSessionManager.h; path = ../../HelloBrowser3D/CaptureSessionManager.h; sourceTree = "<group>"; };
 		61971CF41BA35D87008C5807 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CaptureSessionManager.m; path = ../../HelloBrowser3D/CaptureSessionManager.m; sourceTree = "<group>"; };
 		61971CF61BA35D9D008C5807 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../../HelloBrowser3D/SDKs/data; sourceTree = "<group>"; };
@@ -81,22 +55,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				617CE45C1CA55BDA00B34602 /* libstdc++.6.0.9.tbd in Frameworks */,
 				61971CE21BA35D7B008C5807 /* ARBrowser3DRadar.framework in Frameworks */,
 				61971CE31BA35D7B008C5807 /* ARBrowser3D.framework in Frameworks */,
-				61971CEC1BA35D7B008C5807 /* QuartzCore.framework in Frameworks */,
-				61971CE61BA35D7B008C5807 /* CoreMedia.framework in Frameworks */,
-				61971CE71BA35D7B008C5807 /* AVFoundation.framework in Frameworks */,
-				61971CED1BA35D7B008C5807 /* OpenGLES.framework in Frameworks */,
-				61971CF01BA35D7B008C5807 /* UIKit.framework in Frameworks */,
-				61971CEB1BA35D7B008C5807 /* CoreLocation.framework in Frameworks */,
-				61971CE91BA35D7B008C5807 /* CoreFoundation.framework in Frameworks */,
-				61971CE41BA35D7B008C5807 /* libstdc++.6.0.9.tbd in Frameworks */,
-				61971CF11BA35D7B008C5807 /* Foundation.framework in Frameworks */,
-				61971CEF1BA35D7B008C5807 /* MessageUI.framework in Frameworks */,
-				61971CF21BA35D7B008C5807 /* CoreGraphics.framework in Frameworks */,
-				61971CE81BA35D7B008C5807 /* CoreVideo.framework in Frameworks */,
-				61971CEE1BA35D7B008C5807 /* MediaPlayer.framework in Frameworks */,
-				61971CEA1BA35D7B008C5807 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,23 +102,10 @@
 		61971CAE1BA35A8A008C5807 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				617CE45B1CA55BDA00B34602 /* libstdc++.6.0.9.tbd */,
 				61971CD11BA35D7B008C5807 /* ARBrowser3DRadar.framework */,
 				61971CD21BA35D7B008C5807 /* ARBrowser3D.framework */,
-				61971CD31BA35D7B008C5807 /* libstdc++.6.0.9.tbd */,
 				61971CD41BA35D7B008C5807 /* resources.bundle */,
-				61971CD51BA35D7B008C5807 /* CoreMedia.framework */,
-				61971CD61BA35D7B008C5807 /* AVFoundation.framework */,
-				61971CD71BA35D7B008C5807 /* CoreVideo.framework */,
-				61971CD81BA35D7B008C5807 /* CoreFoundation.framework */,
-				61971CD91BA35D7B008C5807 /* CoreMotion.framework */,
-				61971CDA1BA35D7B008C5807 /* CoreLocation.framework */,
-				61971CDB1BA35D7B008C5807 /* QuartzCore.framework */,
-				61971CDC1BA35D7B008C5807 /* OpenGLES.framework */,
-				61971CDD1BA35D7B008C5807 /* MediaPlayer.framework */,
-				61971CDE1BA35D7B008C5807 /* MessageUI.framework */,
-				61971CDF1BA35D7B008C5807 /* UIKit.framework */,
-				61971CE01BA35D7B008C5807 /* Foundation.framework */,
-				61971CE11BA35D7B008C5807 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -376,6 +324,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aumentia.HelloBrowser3DSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_PNG_TEXT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "HelloBrowser3DSwift/HelloBrowser3DSwift-Bridging-Header.h";
 			};
 			name = Debug;
@@ -391,6 +340,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aumentia.HelloBrowser3DSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_PNG_TEXT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "HelloBrowser3DSwift/HelloBrowser3DSwift-Bridging-Header.h";
 			};
 			name = Release;
