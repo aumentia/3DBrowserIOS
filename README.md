@@ -14,7 +14,7 @@
 * Place it wherever you want..
 * **arm64 support**
 * **BITCODE enabled**
-* Compatible with **XCode 7** and **iOS 9**
+* Compabitle with **XCode7.3**, **Swift 2.2** and **iOS 9**
 
 <br>
 **********************
