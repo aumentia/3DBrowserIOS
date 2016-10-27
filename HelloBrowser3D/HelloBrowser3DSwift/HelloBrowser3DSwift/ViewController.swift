@@ -48,7 +48,7 @@ class ViewController: UIViewController, EDBrowserProtocol
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
         
@@ -64,11 +64,11 @@ class ViewController: UIViewController, EDBrowserProtocol
         _my3dBrowser.delegate = self
         
         // Transparent background
-        _my3dBrowser.backgroundColor = UIColor.clearColor()
+        _my3dBrowser.backgroundColor = UIColor.clear
         
         // Add view
         self.view.addSubview(_my3dBrowser)
-        self.view.bringSubviewToFront(_my3dBrowser)
+        self.view.bringSubview(toFront: _my3dBrowser)
         
         // Add gestures
         addGestureEvents()
@@ -84,10 +84,10 @@ class ViewController: UIViewController, EDBrowserProtocol
         _poisArray = NSMutableArray()
         setupRadar()
         
-        self.view.backgroundColor = UIColor.clearColor()
+        self.view.backgroundColor = UIColor.clear
     }
     
-    override func viewWillDisappear(animated: Bool)
+    override func viewWillDisappear(_ animated: Bool)
     {
         super.viewWillDisappear(animated)
         
@@ -110,7 +110,7 @@ class ViewController: UIViewController, EDBrowserProtocol
         removeRadar()
         
         // Release memory
-        _my3dBrowser.releaseBrowser()
+        _my3dBrowser.release()
         _my3dBrowser.removeFromSuperview()
         releaseMemory()
     }
@@ -166,7 +166,7 @@ extension ViewController
         
         poi.location = location
         
-        _poisArray.addObject(poi)
+        _poisArray.add(poi)
         
         if Counter._counter % 2 == 0
         {
@@ -221,7 +221,7 @@ extension ViewController
                 break
         }
         
-        _poisArray.addObject(poi)
+        _poisArray.add(poi)
         
         let uIdPOI = _my3dBrowser.add(poi)
         
@@ -241,9 +241,9 @@ extension ViewController
         let _lon = location.coordinate.longitude
         
         // Add a set of 2D and 3D POIs
-        if addPoi(CLLocation(latitude: _lat - 1, longitude: _lon + 1)) && addPoi(CLLocation(latitude: _lat + 1, longitude: _lon + 1))
+        if addPoi(location: CLLocation(latitude: _lat - 1, longitude: _lon + 1)) && addPoi(location: CLLocation(latitude: _lat + 1, longitude: _lon + 1))
         {
-            if addPoi2D(CLLocation(latitude: _lat + 1, longitude: _lon - 1)) && addPoi2D( CLLocation(latitude: _lat + 1, longitude: _lon - 2))
+            if addPoi2D(location: CLLocation(latitude: _lat + 1, longitude: _lon - 1)) && addPoi2D( location: CLLocation(latitude: _lat + 1, longitude: _lon - 2))
             {
                 return true
             }
@@ -264,7 +264,7 @@ extension ViewController
             
             var radarImage:UIImage
             
-            if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone
+            if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.phone
             {
                 radarImage = UIImage(named: "resources.bundle/iPhoneRadar.png")!
             }
@@ -273,7 +273,7 @@ extension ViewController
                 radarImage = UIImage(named: "resources.bundle/iPadRadar.png")!
             }
             
-            _radarController.view.frame = CGRectMake(self.view.frame.origin.x + 10, self.view.frame.origin.y + 10, radarImage.size.width, radarImage.size.height)
+            _radarController.view.frame = CGRect(x: self.view.frame.origin.x + 10, y: self.view.frame.origin.y + 10, width: radarImage.size.width, height: radarImage.size.height)
             
             _radarController.radarImage = radarImage
             
@@ -298,12 +298,12 @@ extension ViewController
     
     func refreshPois()
     {
-        let lockQueue = dispatch_queue_create("com.aumentia.LockQueue", nil)
-        dispatch_sync(lockQueue)
-            {
-                self._radarController.poisArray = self._poisArray
-                self._radarController.reset()
-                self._radarController.refresh()
+        let serialQueue = DispatchQueue(label: "com.aumentia.LockQueue")
+        serialQueue.sync {
+            
+            self._radarController.poisArray = self._poisArray
+            self._radarController.reset()
+            self._radarController.refresh()
         }
     }
     
@@ -315,8 +315,8 @@ extension ViewController
     
     // MARK: - Render Delegate
     
-    func poiClicked(poi: Poi!)
-    {
+    func poiClicked(_ poi: Poi!) {
+        
         print("Poi \(poi.uId) clicked!!!")
         
         // Let's refresh the texture on click
@@ -330,15 +330,15 @@ extension ViewController
         _currentSelectedPOI = poi
     }
     
-    func poiSelected(poi: Poi!)
-    {
+    func poiSelected(_ poi: Poi!) {
+        
         print("Poi \(poi.uId) selected!!!")
         
         _currentSelectedPOI = poi
     }
     
-    func poisInView(poisArray: NSMutableArray!)
-    {
+    func pois(inView poisArray: NSMutableArray!) {
+        
         _radarController.selectedPoi = _currentSelectedPOI
         _radarController.refresh()
     }
@@ -356,17 +356,17 @@ extension ViewController
         // Set video streaming quality
         _captureManager.captureSession.sessionPreset = AVCaptureSessionPresetPhoto
         
-        _captureManager.outPutSetting = NSNumber(unsignedInt: kCVPixelFormatType_32BGRA)
+        _captureManager.outPutSetting = NSNumber(value: kCVPixelFormatType_32BGRA)
         
-        _captureManager.addVideoInput(AVCaptureDevicePosition.Back)
+        _captureManager.addVideoInput(AVCaptureDevicePosition.back)
         _captureManager.addVideoOutput()
         _captureManager.addVideoPreviewLayer()
         
         let layerRect:CGRect = self.view.bounds
         
-        _captureManager.previewLayer.opaque = false
-        _captureManager.previewLayer.bounds = layerRect
-        _captureManager.previewLayer.position = CGPointMake(CGRectGetMidX(layerRect), CGRectGetMidY(layerRect))
+        _captureManager.previewLayer.isOpaque   = false
+        _captureManager.previewLayer.bounds     = layerRect
+        _captureManager.previewLayer.position   = CGPoint(x: layerRect.midX, y: layerRect.midY)
         
         // Create a view where we attach the AV Preview Layer
         _cameraView = UIView(frame: self.view.bounds)
@@ -376,9 +376,9 @@ extension ViewController
         self.view.addSubview(_cameraView)
         
         // Start
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0))
-            {
-                self.startCaptureManager()
+        DispatchQueue.main.async {
+            
+            self.startCaptureManager()
         }
     }
     
@@ -416,7 +416,7 @@ extension ViewController
             _motionManager.deviceMotionUpdateInterval  = 1.0 / kAccelerometerFrequency
             
             _motionManager.startAccelerometerUpdates()
-            _motionManager.startDeviceMotionUpdatesUsingReferenceFrame(CMAttitudeReferenceFrame.XMagneticNorthZVertical)
+            _motionManager.startDeviceMotionUpdates(using: CMAttitudeReferenceFrame.xMagneticNorthZVertical)
         }
     }
     
@@ -441,7 +441,7 @@ extension ViewController:UIGestureRecognizerDelegate
         // PAN
         if _panRecognizer == nil
         {
-            _panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ViewController.move(_:)))
+            _panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ViewController.move(recognizer:)))
             _panRecognizer.minimumNumberOfTouches = 1
             _panRecognizer.maximumNumberOfTouches = 1
             _panRecognizer.delegate               = self
@@ -452,7 +452,7 @@ extension ViewController:UIGestureRecognizerDelegate
         // PINCH
         if _pinchRecognizer == nil
         {
-            _pinchRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(ViewController.zoomPinch(_:)))
+            _pinchRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(ViewController.zoomPinch(recognizer:)))
             
             self.view.addGestureRecognizer(_pinchRecognizer)
         }
@@ -460,7 +460,7 @@ extension ViewController:UIGestureRecognizerDelegate
         // ROTATION
         if _rotationRecognizer == nil
         {
-            _rotationRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(ViewController.spin(_:)))
+            _rotationRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(ViewController.spin(recognizer:)))
             
             self.view.addGestureRecognizer(_rotationRecognizer)
         }
@@ -511,7 +511,7 @@ extension ViewController: CLLocationManagerDelegate
             _locationManager.desiredAccuracy    = kCLLocationAccuracyBest
             _locationManager.delegate           = self
             
-            if _locationManager.respondsToSelector(#selector(CLLocationManager.requestWhenInUseAuthorization))
+            if _locationManager.responds(to: #selector(CLLocationManager.requestWhenInUseAuthorization))
             {
                 _locationManager.requestWhenInUseAuthorization()
             }
@@ -533,38 +533,48 @@ extension ViewController: CLLocationManagerDelegate
     
     // MARK: - Location Delegate
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError)
-    {
-        print("Error: " + error.description)
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        
+        print("Error: \(error)")
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading)
-    {
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        
         _radarController.setHeading(newHeading)
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation)
-    {
-        let distanceInMeters:CLLocationDistance = newLocation.distanceFromLocation(oldLocation)
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        if _my3dBrowser != nil && distanceInMeters >= 0
-        {
-            if _lastLocation == nil
-            {
-                // Add POIs
-                addPois(newLocation)
+        if let newLocation = locations.last {
+            
+            var oldLocation = locations.first
+            
+            if locations.count > 1 {
                 
-                refreshPois()
+                oldLocation = locations[locations.count - 2]
             }
-            _lastLocation = newLocation
             
-            print("Location updated: lon \(newLocation.coordinate.longitude) and lat \(newLocation.coordinate.latitude)")
+            let distanceInMeters:CLLocationDistance = newLocation.distance(from: oldLocation!)
             
-            // ARBrowser
-            _my3dBrowser.updateLocation(newLocation)
-            
-            // Radar
-            setUserLocationInRadar(newLocation)
+            if _my3dBrowser != nil && distanceInMeters >= 0
+            {
+                if _lastLocation == nil
+                {
+                    // Add POIs
+                    let _ = addPois(location: newLocation)
+                    
+                    refreshPois()
+                }
+                _lastLocation = newLocation
+                
+                print("Location updated: lon \(newLocation.coordinate.longitude) and lat \(newLocation.coordinate.latitude)")
+                
+                // ARBrowser
+                _my3dBrowser.update(newLocation)
+                
+                // Radar
+                setUserLocationInRadar(userLocation: newLocation)
+            }
         }
     }
 }

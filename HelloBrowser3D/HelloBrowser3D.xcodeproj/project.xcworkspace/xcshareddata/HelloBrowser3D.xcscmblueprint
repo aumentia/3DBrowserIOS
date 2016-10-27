@@ -9,7 +9,7 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7A376A84-B1E7-45EA-A1CE-443CEE5D3015",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "A400F2F22D23A463518B585E0BD3B3891A95188C" : "Hello3DBrowser_iOS",
+    "A400F2F22D23A463518B585E0BD3B3891A95188C" : "Hello3DBrowser_iOS\/",
     "5260F61160223A2BE6BF67F3E5B5FA2D44385EE3" : "3D%20Browser"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "HelloBrowser3D",
