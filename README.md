@@ -16,6 +16,13 @@
 * **BITCODE enabled**
 * Compabitle with **XCode7.3**, **Swift 2.2** and **iOS 9**
 
+
+If you get the following error in Xcode 7.3 
+```
+libpng error: CgBI: unhandled critical chunk 
+```
+Go to build settings and set
+**Remove Text Metadata From PNG Files = NO**
 <br>
 **********************
     Request an API Key
